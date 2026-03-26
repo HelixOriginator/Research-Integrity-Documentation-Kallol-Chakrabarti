@@ -1,297 +1,296 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research Integrity Documentation — Kallol Chakrabarti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --bg:#0a0a0f;--surface:#10101a;--border:#1e1e2e;--accent:#c8a96e;
-      --accent2:#7e6cff;--text:#e8e6df;--muted:#6b6880;--danger:#ff6b6b;
-      --green:#4ade80;--glow:rgba(200,169,110,0.15);
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.7;min-height:100vh;overflow-x:hidden}
-    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4}
-    .topbar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent2));z-index:100;animation:shimmer 3s linear infinite;background-size:200% 100%}
-    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-    .container{max-width:900px;margin:0 auto;padding:100px 32px 80px;position:relative;z-index:1}
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+<meta name="google-site-verification" content="6qcwYwzA6RaAwLVA6G3HBTprB8Bdw4A16uZCF5e9Ar8" />
+<title>Research Integrity Documentation — Kallol Chakrabarti</title> 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/> 
+<style> 
+:root { 
+--bg:#0a0a0f;--surface:#10101a;--border:#1e1e2e;--accent:#c8a96e; 
+--accent2:#7e6cff;--text:#e8e6df;--muted:#6b6880;--danger:#ff6b6b; 
+--green:#4ade80;--glow:rgba(200,169,110,0.15); 
+} 
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0} 
+html{scroll-behavior:smooth} 
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.7;min-height:100vh;overflow-x:hidden} 
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.4} 
+.topbar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent2));z-index:100;animation:shimmer 3s linear infinite;background-size:200% 100%} 
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}} 
+.container{max-width:900px;margin:0 auto;padding:100px 32px 80px;position:relative;z-index:1}   
+/* Header */ 
+.header{border-left:2px solid var(--accent);padding-left:28px;margin-bottom:64px;animation:fadeUp 0.8s ease both}   .header .label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:12px} 
+.header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,46px);font-weight:600;line-height:1.15;color:var(--text);margin-bottom:16px} 
+.header h1 span{color:var(--accent)} 
+.header .subtitle{font-size:12px;color:var(--muted);max-width:560px;line-height:1.8} 
+.orcid-badge{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:6px 14px;background:rgba(126,108,255,0.08);border:1px solid rgba(126,108,255,0.25);border-radius:4px;font-size:11px;color:var(--accent2);text-decoration:none;transition:background 0.2s} 
+.orcid-badge:hover{background:rgba(126,108,255,0.15)} 
+.orcid-badge::before{content:' ⬡ ';font-size:13px}   
+/* Stats */ 
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:56px;animation:fadeUp 0.8s 0.2s ease both} 
+.stat{background:var(--surface);padding:24px 20px;text-align:center} 
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:6px} 
+.stat .desc{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}   
+/* Section */ 
+.section{margin-bottom:56px;animation:fadeUp 0.8s 0.35s ease both} 
+.section-title{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:12px} 
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}   
+/* Boxes */ 
+.statement{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);padding:28px 32px;font-size:13px;line-height:1.9;color:#bbb8b0;margin-bottom:24px} 
+.statement strong{color:var(--text);font-weight:500} 
+.alert{background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.2);border-left:3px solid var(--danger);padding:20px 24px;font-size:12px;color:#e8b4b4;margin-bottom:24px;line-height:1.8} 
+.alert strong{color:var(--danger)} 
+.resource-box{background:rgba(126,108,255,0.05);border:1px solid rgba(126,108,255,0.2);border-left:3px solid var(--accent2);padding:28px 32px;margin-bottom:24px} 
+.resource-box .r-title{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px} 
+.resource-box p{font-size:12px;color:#bbb8b0;line-height:1.9;margin-bottom:12px} 
+.resource-box p:last-child{margin-bottom:0} 
+.resource-box strong{color:var(--text)} 
+.resource-list{margin-top:16px;display:flex;flex-direction:column;gap:8px} 
+.resource-list .r-item{display:flex;gap:10px;font-size:12px;color:#bbb8b0;line-height:1.7} 
+.resource-list .r-item::before{content:'→';color:var(--accent2);flex-shrink:0}   
+/* Contradiction */ 
+.contradiction{background:rgba(200,169,110,0.05);border:1px solid rgba(200,169,110,0.2);padding:24px 28px;margin-bottom:32px} 
+.contradiction .c-title{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px} 
+.c-row{display:grid;grid-template-columns:1fr 1fr;gap:16px} 
+.c-box{background:var(--surface);border:1px solid var(--border);padding:16px 18px} 
+.c-box .c-ticket{font-size:10px;color:var(--accent);letter-spacing:0.15em;margin-bottom:8px} 
+.c-box .c-text{font-size:11px;color:var(--muted);line-height:1.7} 
+.c-box.danger{border-color:rgba(255,107,107,0.3)} 
+.c-box.danger .c-ticket{color:var(--danger)} 
+.c-box.success{border-color:rgba(74,222,128,0.3)} 
+.c-box.success .c-ticket{color:var(--green)}   
+/* CTA */ 
+.cta-wrapper{margin:32px 0;display:flex;flex-direction:column;gap:12px;align-items:center} 
+.cta-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 36px;background:transparent;border:1px solid var(--accent);color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:color 0.3s;width:100%;max-width:580px;justify-content:center} 
+.cta-btn::before{content:'';position:absolute;inset:0;background:var(--accent);transform:translateX(-100%);transition:transform 0.3s ease;z-index:0} 
+.cta-btn:hover::before{transform:translateX(0)} 
+.cta-btn:hover{color:var(--bg)} 
+.cta-btn span{position:relative;z-index:1} 
+.cta-btn .arrow{position:relative;z-index:1;font-size:16px;transition:transform 0.3s} 
+.cta-btn:hover .arrow{transform:translateX(4px)} 
+.cta-btn.secondary{border-color:var(--accent2);color:var(--accent2)} 
+.cta-btn.secondary::before{background:var(--accent2)} 
+.cta-btn.secondary:hover{color:#fff} 
+.cta-label{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-align:center}   
+/* Records */ 
+.record-list{display:flex;flex-direction:column;gap:10px} 
+.record-item{display:flex;align-items:flex-start;gap:16px;background:var(--surface);border:1px solid var(--border);padding:14px 18px;transition:border-color 0.2s} 
+.record-item:hover{border-color:var(--accent)} 
+.record-item .icon{font-size:16px;margin-top:1px;flex-shrink:0} 
+.record-item .content .title{font-size:12px;color:var(--text);font-weight:500;margin-bottom:3px} 
+.record-item .content .detail{font-size:11px;color:var(--muted)}   
+/* Portfolio grid */ 
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px} 
+.port-btn{display:flex;align-items:flex-start;gap:12px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);text-decoration:none;transition:all 0.2s;color:var(--text)} 
+.port-btn:hover{border-color:var(--accent);background:rgba(200,169,110,0.05)} 
+.port-btn .p-icon{font-size:18px;flex-shrink:0;margin-top:2px} 
+.port-btn .p-title{font-size:11px;color:var(--accent);font-weight:500;margin-bottom:3px;line-height:1.4} 
+.port-btn .p-desc{font-size:10px;color:var(--muted);line-height:1.5}   
+/* Timeline */ 
+.timeline{position:relative;padding-left:24px;border-left:1px solid var(--border)} 
+.timeline-item{position:relative;margin-bottom:24px} 
+.timeline-item::before{content:'';position:absolute;left:-29px;top:6px;width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--glow)} 
+.timeline-item.highlight::before{background:var(--green);box-shadow:0 0 8px rgba(74,222,128,0.3)} 
+.timeline-item.critical::before{background:var(--danger);box-shadow:0 0 8px rgba(255,107,107,0.3)} 
+.timeline-item .date{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px} 
+.timeline-item.highlight .date{color:var(--green)} 
+.timeline-item.critical .date{color:var(--danger)} 
+.timeline-item .event{font-size:12px;color:var(--text)} 
+.timeline-item .note{font-size:11px;color:var(--muted);margin-top:2px}   
+/* Footer */ 
+.footer{margin-top:72px;padding-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px} 
+.footer .name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text)} 
+.footer .meta{font-size:10px;color:var(--muted);text-align:right;line-height:1.8}   
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}} 
+@media(max-width:640px){ 
+.container{padding:80px 20px 60px} 
+.stats{grid-template-columns:repeat(2,1fr)} 
+.c-row{grid-template-columns:1fr} 
+.footer{flex-direction:column;text-align:center} 
+.footer .meta{text-align:center} 
+.portfolio-grid{grid-template-columns:1fr} 
+} 
+</style> 
+</head> 
+<body> 
+<div class="topbar"></div> 
+<div class="container">   
+<!-- Header --> 
+<div class="header"> 
+<div class="label">Public Archive · Established 21 March 2026 · Updated 26 March 2026</div> 
+<h1>Research Integrity<br/>Documentation<br/><span>Kallol Chakrabarti</span></h1> 
+<p class="subtitle">Permanent public archive documenting institutional correspondence affecting 261 DOI-registered research works. Maintained for transparency, intellectual property protection, and open science accountability. This archive also serves as a resource for independent researchers on protecting their institutional rights.</p> 
+<a class="orcid-badge" href="https://orcid.org/0009-0007-4971-8936" target="_blank" rel="noopener">ORCID: 0009-0007-4971-8936</a> 
+</div>   
+<!-- Stats --> 
+<div class="stats"> 
+<div class="stat"><div class="num">261</div><div class="desc">DOI Publications</div></div> 
+<div class="stat"><div class="num">219+</div><div class="desc">Original Concepts</div></div> 
+<div class="stat"><div class="num">94.9%</div><div class="desc">Avg Novelty Score</div></div> 
+<div class="stat"><div class="num">5000+</div><div class="desc">Global Downloads</div></div> 
+<div class="stat"><div class="num">25</div><div class="desc">Govt Copyrights</div></div> 
+<div class="stat"><div class="num">7</div><div class="desc">Days to Independence</div></div> 
+</div>   
+<!-- Purpose --> 
+<div class="section"> 
+<div class="section-title">Purpose of This Archive</div> 
+<div class="statement"> 
+This repository serves as a <strong>permanent, timestamped public record</strong> of institutional correspondence that resulted in the removal of 261 DOI-registered research works belonging to independent researcher Kallol Chakrabarti.<br/><br/> 
+This archive is maintained strictly for the purposes of <strong>intellectual property protection</strong>, <strong>open science transparency</strong>, and <strong>researcher rights documentation</strong>. It is not an act of escalation. It is an act of record-keeping — the most fundamental right of any researcher.<br/><br/> 
+This case also serves as a <strong>landmark reference</strong> for how independent researchers can protect their work, assert their rights, and build sovereign research infrastructure when institutional platforms fail them. 
+</div> 
+</div>   
 
-    /* Header */
-    .header{border-left:2px solid var(--accent);padding-left:28px;margin-bottom:64px;animation:fadeUp 0.8s ease both}
-    .header .label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-    .header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,46px);font-weight:600;line-height:1.15;color:var(--text);margin-bottom:16px}
-    .header h1 span{color:var(--accent)}
-    .header .subtitle{font-size:12px;color:var(--muted);max-width:560px;line-height:1.8}
-    .orcid-badge{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:6px 14px;background:rgba(126,108,255,0.08);border:1px solid rgba(126,108,255,0.25);border-radius:4px;font-size:11px;color:var(--accent2);text-decoration:none;transition:background 0.2s}
-    .orcid-badge:hover{background:rgba(126,108,255,0.15)}
-    .orcid-badge::before{content:'⬡';font-size:13px}
+<!-- Quick Access Buttons -->
+<div class="section"> 
+<div class="section-title">Quick Access — Key Resources</div> 
+<div class="cta-wrapper"> 
+<a class="cta-btn" href="https://kallol-research-repositories.netlify.app/" target="_blank" rel="noopener"> 
+<span>Independent Research Repository</span> 
+<span class="arrow">→</span> 
+</a> 
+<a class="cta-btn secondary" href="https://helixoriginator.github.io/National-IP-Verified-Policy-Registry/" target="_blank" rel="noopener"> 
+<span>National IP-Verified Policy Registry</span> 
+<span class="arrow">→</span> 
+</a> 
+<a class="cta-btn" href="https://helixoriginator.github.io/The-Kallol-Taxonomy-of-Research-DOIs/" target="_blank" rel="noopener"> 
+<span>The Kallol Taxonomy of Research DOIs</span> 
+<span class="arrow">→</span> 
+</a> 
+<div class="cta-label">All resources permanently accessible · No third-party platform dependency</div> 
+</div> 
+</div>   
 
-    /* Stats */
-    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:56px;animation:fadeUp 0.8s 0.2s ease both}
-    .stat{background:var(--surface);padding:24px 20px;text-align:center}
-    .stat .num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:6px}
-    .stat .desc{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
-
-    /* Section */
-    .section{margin-bottom:56px;animation:fadeUp 0.8s 0.35s ease both}
-    .section-title{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:12px}
-    .section-title::after{content:'';flex:1;height:1px;background:var(--border)}
-
-    /* Boxes */
-    .statement{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);padding:28px 32px;font-size:13px;line-height:1.9;color:#bbb8b0;margin-bottom:24px}
-    .statement strong{color:var(--text);font-weight:500}
-    .alert{background:rgba(255,107,107,0.06);border:1px solid rgba(255,107,107,0.2);border-left:3px solid var(--danger);padding:20px 24px;font-size:12px;color:#e8b4b4;margin-bottom:24px;line-height:1.8}
-    .alert strong{color:var(--danger)}
-    .resource-box{background:rgba(126,108,255,0.05);border:1px solid rgba(126,108,255,0.2);border-left:3px solid var(--accent2);padding:28px 32px;margin-bottom:24px}
-    .resource-box .r-title{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px}
-    .resource-box p{font-size:12px;color:#bbb8b0;line-height:1.9;margin-bottom:12px}
-    .resource-box p:last-child{margin-bottom:0}
-    .resource-box strong{color:var(--text)}
-    .resource-list{margin-top:16px;display:flex;flex-direction:column;gap:8px}
-    .resource-list .r-item{display:flex;gap:10px;font-size:12px;color:#bbb8b0;line-height:1.7}
-    .resource-list .r-item::before{content:'→';color:var(--accent2);flex-shrink:0}
-
-    /* Contradiction */
-    .contradiction{background:rgba(200,169,110,0.05);border:1px solid rgba(200,169,110,0.2);padding:24px 28px;margin-bottom:32px}
-    .contradiction .c-title{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-    .c-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .c-box{background:var(--surface);border:1px solid var(--border);padding:16px 18px}
-    .c-box .c-ticket{font-size:10px;color:var(--accent);letter-spacing:0.15em;margin-bottom:8px}
-    .c-box .c-text{font-size:11px;color:var(--muted);line-height:1.7}
-    .c-box.danger{border-color:rgba(255,107,107,0.3)}
-    .c-box.danger .c-ticket{color:var(--danger)}
-    .c-box.success{border-color:rgba(74,222,128,0.3)}
-    .c-box.success .c-ticket{color:var(--green)}
-
-    /* CTA */
-    .cta-wrapper{margin:32px 0;display:flex;flex-direction:column;gap:12px;align-items:center}
-    .cta-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 36px;background:transparent;border:1px solid var(--accent);color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:color 0.3s;width:100%;max-width:580px;justify-content:center}
-    .cta-btn::before{content:'';position:absolute;inset:0;background:var(--accent);transform:translateX(-100%);transition:transform 0.3s ease;z-index:0}
-    .cta-btn:hover::before{transform:translateX(0)}
-    .cta-btn:hover{color:var(--bg)}
-    .cta-btn span{position:relative;z-index:1}
-    .cta-btn .arrow{position:relative;z-index:1;font-size:16px;transition:transform 0.3s}
-    .cta-btn:hover .arrow{transform:translateX(4px)}
-    .cta-btn.secondary{border-color:var(--accent2);color:var(--accent2)}
-    .cta-btn.secondary::before{background:var(--accent2)}
-    .cta-btn.secondary:hover{color:#fff}
-    .cta-label{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-align:center}
-
-    /* Records */
-    .record-list{display:flex;flex-direction:column;gap:10px}
-    .record-item{display:flex;align-items:flex-start;gap:16px;background:var(--surface);border:1px solid var(--border);padding:14px 18px;transition:border-color 0.2s}
-    .record-item:hover{border-color:var(--accent)}
-    .record-item .icon{font-size:16px;margin-top:1px;flex-shrink:0}
-    .record-item .content .title{font-size:12px;color:var(--text);font-weight:500;margin-bottom:3px}
-    .record-item .content .detail{font-size:11px;color:var(--muted)}
-
-    /* Portfolio grid */
-    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
-    .port-btn{display:flex;align-items:flex-start;gap:12px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);text-decoration:none;transition:all 0.2s;color:var(--text)}
-    .port-btn:hover{border-color:var(--accent);background:rgba(200,169,110,0.05)}
-    .port-btn .p-icon{font-size:18px;flex-shrink:0;margin-top:2px}
-    .port-btn .p-title{font-size:11px;color:var(--accent);font-weight:500;margin-bottom:3px;line-height:1.4}
-    .port-btn .p-desc{font-size:10px;color:var(--muted);line-height:1.5}
-
-    /* Timeline */
-    .timeline{position:relative;padding-left:24px;border-left:1px solid var(--border)}
-    .timeline-item{position:relative;margin-bottom:24px}
-    .timeline-item::before{content:'';position:absolute;left:-29px;top:6px;width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--glow)}
-    .timeline-item.highlight::before{background:var(--green);box-shadow:0 0 8px rgba(74,222,128,0.3)}
-    .timeline-item.critical::before{background:var(--danger);box-shadow:0 0 8px rgba(255,107,107,0.3)}
-    .timeline-item .date{font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px}
-    .timeline-item.highlight .date{color:var(--green)}
-    .timeline-item.critical .date{color:var(--danger)}
-    .timeline-item .event{font-size:12px;color:var(--text)}
-    .timeline-item .note{font-size:11px;color:var(--muted);margin-top:2px}
-
-    /* Footer */
-    .footer{margin-top:72px;padding-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-    .footer .name{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text)}
-    .footer .meta{font-size:10px;color:var(--muted);text-align:right;line-height:1.8}
-
-    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    @media(max-width:640px){
-      .container{padding:80px 20px 60px}
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .c-row{grid-template-columns:1fr}
-      .footer{flex-direction:column;text-align:center}
-      .footer .meta{text-align:center}
-      .portfolio-grid{grid-template-columns:1fr}
-    }
-  </style>
-</head>
-<body>
-<div class="topbar"></div>
-<div class="container">
-
-  <!-- Header -->
-  <div class="header">
-    <div class="label">Public Archive · Established 21 March 2026 · Updated 26 March 2026</div>
-    <h1>Research Integrity<br/>Documentation<br/><span>Kallol Chakrabarti</span></h1>
-    <p class="subtitle">Permanent public archive documenting institutional correspondence affecting 261 DOI-registered research works. Maintained for transparency, intellectual property protection, and open science accountability. This archive also serves as a resource for independent researchers on protecting their institutional rights.</p>
-    <a class="orcid-badge" href="https://orcid.org/0009-0007-4971-8936" target="_blank" rel="noopener">ORCID: 0009-0007-4971-8936</a>
-  </div>
-
-  <!-- Stats -->
-  <div class="stats">
-    <div class="stat"><div class="num">261</div><div class="desc">DOI Publications</div></div>
-    <div class="stat"><div class="num">219+</div><div class="desc">Original Concepts</div></div>
-    <div class="stat"><div class="num">94.9%</div><div class="desc">Avg Novelty Score</div></div>
-    <div class="stat"><div class="num">5000+</div><div class="desc">Global Downloads</div></div>
-    <div class="stat"><div class="num">25</div><div class="desc">Govt Copyrights</div></div>
-    <div class="stat"><div class="num">7</div><div class="desc">Days to Independence</div></div>
-  </div>
-
-  <!-- Purpose -->
-  <div class="section">
-    <div class="section-title">Purpose of This Archive</div>
-    <div class="statement">
-      This repository serves as a <strong>permanent, timestamped public record</strong> of institutional correspondence that resulted in the removal of 261 DOI-registered research works belonging to independent researcher Kallol Chakrabarti.<br/><br/>
-      This archive is maintained strictly for the purposes of <strong>intellectual property protection</strong>, <strong>open science transparency</strong>, and <strong>researcher rights documentation</strong>. It is not an act of escalation. It is an act of record-keeping — the most fundamental right of any researcher.<br/><br/>
-      This case also serves as a <strong>landmark reference</strong> for how independent researchers can protect their work, assert their rights, and build sovereign research infrastructure when institutional platforms fail them.
-    </div>
-  </div>
-
-  <!-- Contradiction -->
-  <div class="section">
-    <div class="section-title">The Institutional Record — A Study in Contradiction</div>
-    <div class="alert">
-      <strong>Important:</strong> The following documents two pieces of official institutional correspondence received 7 days apart. Both are preserved as unedited original screenshots in this repository. No commentary is required — the documents speak for themselves.
-    </div>
-    <div class="contradiction">
-      <div class="c-title">Ticket #3318191 vs Ticket #3318938 — Same Institution · 7 Days Apart</div>
-      <div class="c-row">
-        <div class="c-box danger">
-          <div class="c-ticket">Ticket #3318191 · 19 March 2026</div>
-          <div class="c-text">"This decision is final. We will not be responding to further correspondence on this matter, and contacting other channels will not result in a different outcome."<br/><br/>261 DOI-registered works affected. No specific work cited. No prior notice. No appeal offered. Donation request included in the same correspondence.</div>
-        </div>
-        <div class="c-box success">
-          <div class="c-ticket">Ticket #3318938 · 26 March 2026</div>
-          <div class="c-text">"We sincerely apologise for the delay in our response. Due to a technical issue with our email systems, we were unable to process your request until now. Please note that we are currently processing a very high number of tickets, and we kindly ask for your patience."<br/><br/>Same institution. 7 days later. Matter reopened.</div>
-        </div>
-      </div>
-    </div>
-    <div class="cta-wrapper">
-      <a class="cta-btn" href="Screenshot of 260 DOI Deletion.png" target="_blank" rel="noopener">
-        <span>View Correspondence — Ticket #3318191 · 19 March 2026</span>
-        <span class="arrow">→</span>
-      </a>
-      <a class="cta-btn secondary" href="Institutional_Correspondence_Ticket_3318938_26March2026.png" target="_blank" rel="noopener">
-        <span>View Correspondence — Ticket #3318938 · 26 March 2026</span>
-        <span class="arrow">→</span>
-      </a>
-      <div class="cta-label">Both screenshots preserved unedited · Permanently timestamped in this repository</div>
-    </div>
-  </div>
-
-  <!-- Resource for Researchers -->
-  <div class="section">
-    <div class="section-title">A Resource for Independent Researchers</div>
-    <div class="resource-box">
-      <div class="r-title">How Institutions Can Fail to Categorize High-Velocity Independent Research</div>
-      <p>This case documents a critical failure mode in how global research repositories handle <strong>independent, high-output scholars</strong>. The researcher produced 261 DOI-registered works across three distinct functional categories — Dissemination, Infrastructure, and Validation — as formally defined by the <strong>Kallol Taxonomy of Research DOIs</strong>.</p>
-      <p>When platforms built for traditional academic output encounter high-velocity independent research, their automated systems may misclassify legitimate intellectual production. This is documented here not as a complaint — but as a <strong>case study for the global research community</strong> on how institutions can fail, and how researchers can protect themselves.</p>
-      <div class="r-title" style="margin-top:20px">What Every Independent Researcher Should Know</div>
-      <div class="resource-list">
-        <div class="r-item">Your DOI is permanent. It exists in DataCite, CrossRef, and ORCID registries regardless of any platform action. No repository can delete a registered DOI.</div>
-        <div class="r-item">Document everything immediately. Timestamped public archives on GitHub are free, permanent, and carry legal and reputational weight.</div>
-        <div class="r-item">Build platform independence. Host your own files. Own your own infrastructure. No single platform should be the sole access point to your work.</div>
-        <div class="r-item">A "final decision" is not always final. Institutional systems make errors. Calm, documented, professional persistence is more powerful than any complaint.</div>
-        <div class="r-item">Your recognition record is your strongest asset. Government acknowledgements, peer verifications, and institutional citations cannot be deleted by any platform.</div>
-        <div class="r-item">Speed of response matters. This researcher went from deletion to a fully independent self-hosted repository in 7 days — without losing a single DOI.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Recognition -->
-  <div class="section">
-    <div class="section-title">Verified Recognition Record</div>
-    <div class="record-list">
-      <div class="record-item"><div class="icon">🏛️</div><div class="content"><div class="title">National IP Award 2026 — Shortlisted & Invited</div><div class="detail">Government of India · 9th March 2026</div></div></div>
-      <div class="record-item"><div class="icon">🗳️</div><div class="content"><div class="title">Election Commission of India — Policy Suggestion Accepted</div><div class="detail">Constitutional Body of India · Based on published research</div></div></div>
-      <div class="record-item"><div class="icon">🏆</div><div class="content"><div class="title">Assam Chief Minister's Office — Article Officially Endorsed</div><div class="detail">State Government of Assam · Published research work</div></div></div>
-      <div class="record-item"><div class="icon">📋</div><div class="content"><div class="title">Prime Minister's Office — Portfolio Submitted on Record</div><div class="detail">261 DOIs submitted to PMO, India · 5th March 2026</div></div></div>
-      <div class="record-item"><div class="icon">🇬🇧</div><div class="content"><div class="title">UK Government Metascience Unit + University of Sussex (SPRU)</div><div class="detail">Unsolicited expert invitation · Informs global research evaluation policy</div></div></div>
-      <div class="record-item"><div class="icon">🔬</div><div class="content"><div class="title">DeSci Labs, Switzerland — 25 Articles Verified · 94.9% Avg Novelty</div><div class="detail">4 articles scored perfect 100% · AI Novelty Scores suggestion accepted</div></div></div>
-      <div class="record-item"><div class="icon">📄</div><div class="content"><div class="title">Academia AI and Applications Journal — Peer Reviewer Invitation</div><div class="detail">Unsolicited invitation · International AI governance manuscript</div></div></div>
-      <div class="record-item"><div class="icon">🤖</div><div class="content"><div class="title">Google AI — Global Knowledge Ecosystem Entry Confirmed</div><div class="detail">25+ independent validation screenshots on record</div></div></div>
-    </div>
-  </div>
-
-  <!-- Timeline -->
-  <div class="section">
-    <div class="section-title">Chronological Record</div>
-    <div class="timeline">
-      <div class="timeline-item"><div class="date">2025</div><div class="event">DeSci Labs Switzerland independently verifies 25 research articles</div><div class="note">Average novelty score: 94.9% · 4 articles achieve perfect 100%</div></div>
-      <div class="timeline-item"><div class="date">2025</div><div class="event">UK Government Metascience Unit — unsolicited expert invitation</div><div class="note">University of Sussex SPRU · Science Policy Research Unit</div></div>
-      <div class="timeline-item"><div class="date">December 2025</div><div class="event">Shortlisted for National IP Award 2026</div><div class="note">Government of India formal recognition</div></div>
-      <div class="timeline-item"><div class="date">5 March 2026</div><div class="event">Complete portfolio of 261 DOIs submitted to Prime Minister's Office</div><div class="note">Formal submission on record with the Government of India</div></div>
-      <div class="timeline-item"><div class="date">9 March 2026</div><div class="event">Attended National IP Award 2026 ceremony as official invitee</div><div class="note">New Delhi · Government of India</div></div>
-      <div class="timeline-item critical"><div class="date">19 March 2026</div><div class="event">Official institutional correspondence received — Ticket #3318191</div><div class="note">261 DOI-registered works affected · No specific work cited · No prior notice · No appeal offered · Decision stated as final · Donation request included in same correspondence</div></div>
-      <div class="timeline-item highlight"><div class="date">21 March 2026</div><div class="event">This public archive established — timestamped permanently</div><div class="note">For transparency, IP protection, and open science accountability</div></div>
-      <div class="timeline-item highlight"><div class="date">26 March 2026</div><div class="event">Second institutional correspondence received — Ticket #3318938</div><div class="note">Same institution reopened the matter · Cited technical issues · Requested patience · Original action of 19 March 2026 remains unexplained and unreversed as of this date</div></div>
-      <div class="timeline-item highlight"><div class="date">26 March 2026</div><div class="event">Independent Research Repository established and live</div><div class="note">219 verified articles self-hosted · No third-party platform dependency · Full download access restored in 7 days from deletion</div></div>
-    </div>
-  </div>
-
-  <!-- Portfolio -->
-  <div class="section">
-    <div class="section-title">Verified Research Portfolio</div>
-    <div class="portfolio-grid">
-      <a class="port-btn" href="https://kallol-research-repositories.netlify.app" target="_blank" rel="noopener">
-        <div class="p-icon">🗄️</div>
-        <div><div class="p-title">Independent Research Repository</div><div class="p-desc">219 articles · Self-hosted · Direct download · No third-party platform required</div></div>
-      </a>
-      <a class="port-btn" href="https://helixoriginator.github.io/The-Kallol-Taxonomy-of-Research-DOIs/" target="_blank" rel="noopener">
-        <div class="p-icon">📐</div>
-        <div><div class="p-title">The Kallol Taxonomy of Research DOIs</div><div class="p-desc">World-first framework · High-velocity intellectual property · 3-tier architecture</div></div>
-      </a>
-      <a class="port-btn" href="https://helixoriginator.github.io/National-IP-Verified-Policy-Registry/" target="_blank" rel="noopener">
-        <div class="p-icon">🌐</div>
-        <div><div class="p-title">National IP-Verified Policy Registry</div><div class="p-desc">261 DOIs · Master Bibliography · Limca Book of Records Claim</div></div>
-      </a>
-      <a class="port-btn" href="https://helixoriginator.github.io/Screenshots-Institutions-Kallol-Chakrabarti-Validation/" target="_blank" rel="noopener">
-        <div class="p-icon">📸</div>
-        <div><div class="p-title">Institutional Validation Screenshots</div><div class="p-desc">All recognitions documented with evidence · Independently verifiable</div></div>
-      </a>
-      <a class="port-btn" href="https://helixoriginator.github.io/Viksit-Bharat-2047-Governance-Architecture/" target="_blank" rel="noopener">
-        <div class="p-icon">🏛️</div>
-        <div><div class="p-title">Viksit Bharat 2047 — Governance Architecture</div><div class="p-desc">Complete research portfolio · 150+ GitHub repositories</div></div>
-      </a>
-      <a class="port-btn" href="https://elaborate-jelly-ed370e.netlify.app/" target="_blank" rel="noopener">
-        <div class="p-icon">📚</div>
-        <div><div class="p-title">Docu Helix — Original Repository</div><div class="p-desc">Digital Intellectual Property Vault · 217 verified works</div></div>
-      </a>
-      <a class="port-btn" href="https://orcid.org/0009-0007-4971-8936" target="_blank" rel="noopener">
-        <div class="p-icon">🔗</div>
-        <div><div class="p-title">ORCID Profile — 0009-0007-4971-8936</div><div class="p-desc">Permanent independent DOI record · Unaffected by any platform action</div></div>
-      </a>
-      <a class="port-btn" href="https://helixoriginator.github.io/National-IP-Verified-Policy-Registry/Kallol_Research_Bibliography_260_DOIs.docx" target="_blank" rel="noopener">
-        <div class="p-icon">📄</div>
-        <div><div class="p-title">Master Bibliography — 261 DOIs</div><div class="p-desc">Complete verified DOI index · Download Word document</div></div>
-      </a>
-    </div>
-  </div>
-
-  <!-- DOI Permanence -->
-  <div class="section">
-    <div class="section-title">Note on DOI Permanence</div>
-    <div class="statement">
-      All 261 DOIs registered by Kallol Chakrabarti remain <strong>permanently recorded</strong> in global scholarly registries including DataCite, CrossRef, and ORCID — independent of any platform action. No repository deletion affects the existence or validity of a registered DOI.<br/><br/>
-      <strong>The scholarly record is intact. The intellectual property is sovereign. The archive is permanent.</strong>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <div class="name">Kallol Chakrabarti</div>
-    <div class="meta">Independent Researcher · Helix Originator · Lucknow, India<br/>Archive established: 21 March 2026 · Updated: 26 March 2026<br/>All records timestamped · All recognitions independently verified</div>
-  </div>
-
-</div>
-</body>
+<!-- Contradiction --> 
+<div class="section"> 
+<div class="section-title">The Institutional Record — A Study in Contradiction</div> 
+<div class="alert"> 
+<strong>Important:</strong> The following documents two pieces of official institutional correspondence received 7 days apart. Both are preserved as unedited original screenshots in this repository. No commentary is required — the documents speak for themselves. 
+</div> 
+<div class="contradiction"> 
+<div class="c-title">Ticket #3318191 vs Ticket #3318938 — Same Institution · 7 Days Apart</div> 
+<div class="c-row"> 
+<div class="c-box danger"> 
+<div class="c-ticket">Ticket #3318191 · 19 March 2026</div> 
+<div class="c-text">"This decision is final. We will not be responding to further correspondence on this matter, and contacting other channels will not result in a different outcome."<br/><br/>261 DOI-registered works affected. No specific work cited. No prior notice. No appeal offered. Donation request included in the same correspondence.</div> 
+</div> 
+<div class="c-box success"> 
+<div class="c-ticket">Ticket #3318938 · 26 March 2026</div> 
+<div class="c-text">"We sincerely apologise for the delay in our response. Due to a technical issue with our email systems, we were unable to process your request until now. Please note that we are currently processing a very high number of tickets, and we kindly ask for your patience."<br/><br/>Same institution. 7 days later. Matter reopened.</div> 
+</div> 
+</div> 
+</div> 
+<div class="cta-wrapper"> 
+<a class="cta-btn" href="Screenshot of 260 DOI Deletion.png" target="_blank" rel="noopener"> 
+<span>View Correspondence — Ticket #3318191 · 19 March 2026</span> 
+<span class="arrow">→</span> 
+</a> 
+<a class="cta-btn secondary" href="Institutional_Correspondence_Ticket_3318938_26March2026.png" target="_blank" rel="noopener"> 
+<span>View Correspondence — Ticket #3318938 · 26 March 2026</span> 
+<span class="arrow">→</span> 
+</a> 
+<div class="cta-label">Both screenshots preserved unedited · Permanently timestamped in this repository</div> 
+</div> 
+</div>   
+<!-- Resource for Researchers --> 
+<div class="section"> 
+<div class="section-title">A Resource for Independent Researchers</div> 
+<div class="resource-box"> 
+<div class="r-title">How Institutions Can Fail to Categorize High-Velocity Independent Research</div> 
+<p>This case documents a critical failure mode in how global research repositories handle <strong>independent, high-output scholars</strong>. The researcher produced 261 DOI-registered works across three distinct functional categories — Dissemination, Infrastructure, and Validation — as formally defined by the <strong>Kallol Taxonomy of Research DOIs</strong>.</p> 
+<p>When platforms built for traditional academic output encounter high-velocity independent research, their automated systems may misclassify legitimate intellectual production. This is documented here not as a complaint — but as a <strong>case study for the global research community</strong> on how institutions can fail, and how researchers can protect themselves.</p> 
+<div class="r-title" style="margin-top:20px">What Every Independent Researcher Should Know</div> 
+<div class="resource-list"> 
+<div class="r-item">Your DOI is permanent. It exists in DataCite, CrossRef, and ORCID registries regardless of any platform action. No repository can delete a registered DOI.</div> 
+<div class="r-item">Document everything immediately. Timestamped public archives on GitHub are free, permanent, and carry legal and reputational weight.</div> 
+<div class="r-item">Build platform independence. Host your own files. Own your own infrastructure. No single platform should be the sole access point to your work.</div> 
+<div class="r-item">A "final decision" is not always final. Institutional systems make errors. Calm, documented, professional persistence is more powerful than any complaint.</div> 
+<div class="r-item">Your recognition record is your strongest asset. Government acknowledgements, peer verifications, and institutional citations cannot be deleted by any platform.</div> 
+<div class="r-item">Speed of response matters. This researcher went from deletion to a fully independent self-hosted repository in 7 days — without losing a single DOI.</div> 
+</div> 
+</div> 
+</div>   
+<!-- Recognition --> 
+<div class="section"> 
+<div class="section-title">Verified Recognition Record</div> 
+<div class="record-list"> 
+<div class="record-item"><div class="icon"> 🏛️ </div><div class="content"><div class="title">National IP Award 2026 — Shortlisted & Invited</div><div class="detail">Government of India · 9th March 2026</div></div></div> 
+<div class="record-item"><div class="icon"> 🗳️ </div><div class="content"><div class="title">Election Commission of India — Policy Suggestion Accepted</div><div class="detail">Constitutional Body of India · Based on published research</div></div></div> 
+<div class="record-item"><div class="icon"> 🏆 </div><div class="content"><div class="title">Assam Chief Minister's Office — Article Officially Endorsed</div><div class="detail">State Government of Assam · Published research work</div></div></div> 
+<div class="record-item"><div class="icon"> 📋 </div><div class="content"><div class="title">Prime Minister's Office — Portfolio Submitted on Record</div><div class="detail">261 DOIs submitted to PMO, India · 5th March 2026</div></div></div> 
+<div class="record-item"><div class="icon"> 🇬🇧 </div><div class="content"><div class="title">UK Government Metascience Unit + University of Sussex (SPRU)</div><div class="detail">Unsolicited expert invitation · Informs global research evaluation policy</div></div></div> 
+<div class="record-item"><div class="icon"> 🔬 </div><div class="content"><div class="title">DeSci Labs, Switzerland — 25 Articles Verified · 94.9% Avg Novelty</div><div class="detail">4 articles scored perfect 100% · AI Novelty Scores suggestion accepted</div></div></div> 
+<div class="record-item"><div class="icon"> 📄 </div><div class="content"><div class="title">Academia AI and Applications Journal — Peer Reviewer Invitation</div><div class="detail">Unsolicited invitation · International AI governance manuscript</div></div></div> 
+<div class="record-item"><div class="icon"> 🤖 </div><div class="content"><div class="title">Google AI — Global Knowledge Ecosystem Entry Confirmed</div><div class="detail">25+ independent validation screenshots on record</div></div></div> 
+</div> 
+</div>   
+<!-- Timeline --> 
+<div class="section"> 
+<div class="section-title">Chronological Record</div> 
+<div class="timeline"> 
+<div class="timeline-item"><div class="date">2025</div><div class="event">DeSci Labs Switzerland independently verifies 25 research articles</div><div class="note">Average novelty score: 94.9% · 4 articles achieve perfect 100%</div></div> 
+<div class="timeline-item"><div class="date">2025</div><div class="event">UK Government Metascience Unit — unsolicited expert invitation</div><div class="note">University of Sussex SPRU · Science Policy Research Unit</div></div> 
+<div class="timeline-item"><div class="date">December 2025</div><div class="event">Shortlisted for National IP Award 2026</div><div class="note">Government of India formal recognition</div></div> 
+<div class="timeline-item"><div class="date">5 March 2026</div><div class="event">Complete portfolio of 261 DOIs submitted to Prime Minister's Office</div><div class="note">Formal submission on record with the Government of India</div></div> 
+<div class="timeline-item"><div class="date">9 March 2026</div><div class="event">Attended National IP Award 2026 ceremony as official invitee</div><div class="note">New Delhi · Government of India</div></div> 
+<div class="timeline-item critical"><div class="date">19 March 2026</div><div class="event">Official institutional correspondence received — Ticket #3318191</div><div class="note">261 DOI-registered works affected · No specific work cited · No prior notice · No appeal offered · Decision stated as final · Donation request included in same correspondence</div></div> 
+<div class="timeline-item highlight"><div class="date">21 March 2026</div><div class="event">This public archive established — timestamped permanently</div><div class="note">For transparency, IP protection, and open science accountability</div></div> 
+<div class="timeline-item highlight"><div class="date">26 March 2026</div><div class="event">Second institutional correspondence received — Ticket #3318938</div><div class="note">Same institution reopened the matter · Cited technical issues · Requested patience · Original action of 19 March 2026 remains unexplained and unreversed as of this date</div></div> 
+<div class="timeline-item highlight"><div class="date">26 March 2026</div><div class="event">Independent Research Repository established and live</div><div class="note">219 verified articles self-hosted · No third-party platform dependency · Full download access restored in 7 days from deletion</div></div> 
+</div> 
+</div>   
+<!-- Portfolio --> 
+<div class="section"> 
+<div class="section-title">Verified Research Portfolio</div> 
+<div class="portfolio-grid"> 
+<a class="port-btn" href="https://kallol-research-repositories.netlify.app" target="_blank" rel="noopener"> 
+<div class="p-icon"> 🗄️ </div> 
+<div><div class="p-title">Independent Research Repository</div><div class="p-desc">219 articles · Self-hosted · Direct download · No third-party platform required</div></div> 
+</a> 
+<a class="port-btn" href="https://helixoriginator.github.io/The-Kallol-Taxonomy-of-Research-DOIs/" target="_blank" rel="noopener"> 
+<div class="p-icon"> 📐 </div> 
+<div><div class="p-title">The Kallol Taxonomy of Research DOIs</div><div class="p-desc">World-first framework · High-velocity intellectual property · 3-tier architecture</div></div> 
+</a> 
+<a class="port-btn" href="https://helixoriginator.github.io/National-IP-Verified-Policy-Registry/" target="_blank" rel="noopener"> 
+<div class="p-icon"> 🌐 </div> 
+<div><div class="p-title">National IP-Verified Policy Registry</div><div class="p-desc">261 DOIs · Master Bibliography · Limca Book of Records Claim</div></div> 
+</a> 
+<a class="port-btn" href="https://helixoriginator.github.io/Screenshots-Institutions-Kallol-Chakrabarti-Validation/" target="_blank" rel="noopener"> 
+<div class="p-icon"> 📸 </div> 
+<div><div class="p-title">Institutional Validation Screenshots</div><div class="p-desc">All recognitions documented with evidence · Independently verifiable</div></div> 
+</a> 
+<a class="port-btn" href="https://helixoriginator.github.io/Viksit-Bharat-2047-Governance-Architecture/" target="_blank" rel="noopener"> 
+<div class="p-icon"> 🏛️ </div> 
+<div><div class="p-title">Viksit Bharat 2047 — Governance Architecture</div><div class="p-desc">Complete research portfolio · 150+ GitHub repositories</div></div> 
+</a> 
+<a class="port-btn" href="https://elaborate-jelly-ed370e.netlify.app/" target="_blank" rel="noopener"> 
+<div class="p-icon"> 📚 </div> 
+<div><div class="p-title">Docu Helix — Original Repository</div><div class="p-desc">Digital Intellectual Property Vault · 217 verified works</div></div> 
+</a> 
+<a class="port-btn" href="https://orcid.org/0009-0007-4971-8936" target="_blank" rel="noopener"> 
+<div class="p-icon"> 🔗 </div> 
+<div><div class="p-title">ORCID Profile — 0009-0007-4971-8936</div><div class="p-desc">Permanent independent DOI record · Unaffected by any platform action</div></div> 
+</a> 
+<a class="port-btn" href="https://helixoriginator.github.io/National-IP-Verified-Policy-Registry/Kallol_Research_Bibliography_260_DOIs.docx" target="_blank" rel="noopener"> 
+<div class="p-icon"> 📄 </div> 
+<div><div class="p-title">Master Bibliography — 261 DOIs</div><div class="p-desc">Complete verified DOI index · Download Word document</div></div> 
+</a> 
+</div> 
+</div>   
+<!-- DOI Permanence --> 
+<div class="section"> 
+<div class="section-title">Note on DOI Permanence</div> 
+<div class="statement"> 
+All 261 DOIs registered by Kallol Chakrabarti remain <strong>permanently recorded</strong> in global scholarly registries including DataCite, CrossRef, and ORCID — independent of any platform action. No repository deletion affects the existence or validity of a registered DOI.<br/><br/> 
+<strong>The scholarly record is intact. The intellectual property is sovereign. The archive is permanent.</strong> 
+</div> 
+</div>   
+<!-- Footer --> 
+<div class="footer"> 
+<div class="name">Kallol Chakrabarti</div> 
+<div class="meta">Independent Researcher · Helix Originator · Lucknow, India<br/>Archive established: 21 March 2026 · Updated: 26 March 2026<br/>All records timestamped · All recognitions independently verified</div> 
+</div>   
+</div> 
+</body> 
 </html>
