@@ -1,0 +1,11 @@
+# Global directives for all search engines
+User-agent: *
+Allow: /
+
+# Directives for GitHub Pages structure
+Disallow: /assets/
+Disallow: /private/
+Disallow: /temp/
+
+# Link to your XML Sitemap
+Sitemap: https://helixoriginator.github.io/sitemap.xml
